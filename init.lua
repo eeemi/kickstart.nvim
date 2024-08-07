@@ -90,8 +90,26 @@ P.S. You can delete this when you're done too. It's your config now! :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- CUSTOM REMAPS
+
+vim.keymap.set('n', '<C-d>', '<C-d>zz') -- center after moving half page
+vim.keymap.set('n', '<C-u>', '<C-u>zz') -- center after moving half page
+
+vim.keymap.set('v', '<leader>y', '"+y') -- yank to system clipboard in *VISUAL* mode
+vim.keymap.set('n', '<leader>y', '"+y') -- yank to system clipboard in *NORMAL* mode
+vim.keymap.set('n', '<leader>Y', '"+Y') -- yank cursor=>EOL to system clipboard in *NORMAL* mode
+vim.keymap.set('n', '<leader>yy', '_"+y$') -- yank line to system clipboard in *NORMAL* mode
+-- vim.keymap.set('n', '<leader>yy', '"+yg_') -- yank line to system clipboard in *NORMAL* mode
+
+vim.keymap.set('n', '<leader>p', '"_dP') -- paste without changing the last yank register (useful for 'find and replacing')
+
+-- vim.keymap.set('v', '<leader>p', '"+p') -- paste from system clipboard in *VISUAL* mode
+-- vim.keymap.set('v', '<leader>P', '"+P') -- paste from system clipboard in *VISUAL* mode
+-- vim.keymap.set('n', '<leader>p', '"+p') -- paste from system clipboard in *NORMAL* mode
+-- vim.keymap.set('n', '<leader>P', '"+P') -- paste from system clipboard in *NORMAL* mode
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -102,7 +120,7 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
